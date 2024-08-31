@@ -76,7 +76,7 @@ public class MemberServiceImpl  implements MemberService{
 					 
 					 
 					 //ArrayList에 출력하기 전 장바구니의 수량을 전달
-					 //로그인한 경우 csu변수에 저장되어있음 =>여기도 벼녁ㅇ
+					 //로그인한 경우 csu변수에 저장되어있음 =>여기도 벼녁
 					 map.put("csu", su);
 					 map.put("days", "0");
 					 pMapAll.add(map);

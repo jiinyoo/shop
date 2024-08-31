@@ -223,14 +223,14 @@ function numberchange(index)
 {
 		//우선 onesu의 값을 받고 그 친구에 수량을 곱한 값을 넣는다.
 		
-		alert(document.getElementById("originjukprice").value);
+		
 		
 		var onesu=parseInt(document.getElementsByClassName("csu")[index].value);
 
 	
-		document.getElementsByClassName("hp")[index].innerText=(document.getElementById("originhalinprice").value)*onesu;
+		document.getElementsByClassName("hp")[index].innerText=(document.getElementsByClassName("originhalinprice")[index].value)*onesu;
 	
-	    document.getElementsByClassName("jp")[index].innerText=(document.getElementById("originjukprice").value)*onesu;
+	    document.getElementsByClassName("jp")[index].innerText=(document.getElementsByClassName("originjukprice")[index].value)*onesu;
 	    
 	    
 	    
@@ -251,8 +251,8 @@ function numberchange(index)
 	<c:set var="chk" value="0" />
 	<caption><h2>장바구니 현황</h2>
 	<c:forEach items="${pMapAll}" var="map" varStatus="status">
-	<input  type="hidden" value="${map.price-(map.price*map.halin/100)}" name="originhalinprice" id="originhalinprice">
-	<input type="hidden" value="${map.price*map.juk/100}" name="originjukprice" id="originjukprice">
+	<input  type="hidden" value="${map.price-(map.price*map.halin/100)}" name="originhalinprice" class="originhalinprice">
+	<input type="hidden" value="${map.price*map.juk/100}" name="originjukprice" class="originjukprice">
 	<c:set var="str" value=""/>
 	<c:set var="str2" value=""/>
 	<c:if test="${map.days<=1}">
